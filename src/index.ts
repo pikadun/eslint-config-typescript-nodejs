@@ -5,11 +5,11 @@ import { join, basename, extname, resolve } from "path";
 const configurationFiles = readdirSync(resolve(__dirname, "config"));
 const configs = configurationFiles.map(file => `./${join("config", basename(file, extname(file)))}`);
 export = {
-    "parser": "@typescript-eslint/parser",
-    "plugins": [
+    parser: "@typescript-eslint/parser",
+    plugins: [
         "@typescript-eslint"
     ],
-    "extends": configs.concat([
+    extends: configs.concat([
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended"
     ])
