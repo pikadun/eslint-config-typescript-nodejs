@@ -15,7 +15,7 @@
     "build": "tsc -b tsconfig.json",
     "watch": "tsc -b tsconfig.json --watch",
     "prepublishOnly": "esbuild `find src \\( -name '*.ts' \\)` --outdir=lib --format=cjs --minify",
-    "lint": "eslint **/*.ts"
+    "lint": "eslint '**/*.ts'"
   },
   "repository": {
     "type": "git",
