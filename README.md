@@ -3,7 +3,7 @@
 ## Install
 
 ```bash
-npm install eslint eslint-config-typescript-nodejs --save-dev
+npm install eslint-config-typescript-nodejs --save-dev
 ```
 
 ## Usage
