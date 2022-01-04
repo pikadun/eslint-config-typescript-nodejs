@@ -1,0 +1,47 @@
+{
+  "name": "eslint-config-typescript-nodejs",
+  "version": "1.0.0",
+  "description": "Typescript rules for nodejs",
+  "keywords": [
+    "eslint",
+    "typescript",
+    "nodejs"
+  ],
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc -b tsconfig.json",
+    "watch": "tsc -b tsconfig.json --watch",
+    "prepublishOnly": "esbuild `find src \\( -name '*.ts' \\)` --outdir=lib --format=cjs --minify",
+    "lint": "eslint **/*.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pikadun/eslint-config-typescript-nodejs.git"
+  },
+  "author": "Dunn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pikadun/eslint-config-typescript-nodejs/issues"
+  },
+  "homepage": "https://github.com/pikadun/eslint-config-typescript-nodejs#readme",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1"
+  },
+  "devDependencies": {
+    "@types/eslint": "^8.2.1",
+    "@types/node": "^17.0.5",
+    "esbuild": "^0.14.9",
+    "eslint": "^8.5.0",
+    "typescript": "^4.5.4"
+  },
+  "peerDependencies": {
+    "eslint": "^8.0.0"
+  }
+}
