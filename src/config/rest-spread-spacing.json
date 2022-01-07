@@ -1,0 +1,6 @@
+{
+    "rest-spread-spacing": [
+        "error",
+        "never"
+    ]
+}

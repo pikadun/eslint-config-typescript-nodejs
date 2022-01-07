@@ -1,0 +1,4 @@
+{
+    "comma-spacing": "off",
+    "@typescript-eslint/comma-spacing": "error"
+}

@@ -1,0 +1,4 @@
+{
+    "quotes": "off",
+    "@typescript-eslint/quotes": "error"
+}

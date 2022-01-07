@@ -1,0 +1,3 @@
+{
+    "@typescript-eslint/no-confusing-non-null-assertion": "error"
+}

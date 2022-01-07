@@ -1,0 +1,3 @@
+{
+    "@typescript-eslint/prefer-optional-chain": "error"
+}

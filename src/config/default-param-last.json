@@ -1,0 +1,4 @@
+{
+    "default-param-last": "off",
+    "@typescript-eslint/default-param-last": "error"
+}
