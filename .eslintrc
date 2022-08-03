@@ -1,6 +1,9 @@
 {
   "root": true,
   "extends": ".",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
   "overrides": [
     {
       "files": "**/*.ts"

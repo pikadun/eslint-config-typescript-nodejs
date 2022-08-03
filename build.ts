@@ -15,16 +15,17 @@ configurationFiles.forEach((filename) => {
 code += "\n";
 code += "export = {\n";
 code += "    extends: [\n";
-code += "        \"eslint:recommended\",\n";
-code += "        \"plugin:@typescript-eslint/recommended\"\n";
+code += "        \"plugin:@typescript-eslint/recommended\",\n";
+code += "        \"plugin:@typescript-eslint/recommended-requiring-type-checking\",\n";
+code += "        \"plugin:@typescript-eslint/strict\"\n";
 code += "    ],\n";
 code += "    parser: \"@typescript-eslint/parser\",\n";
 code += "    plugins: [\n";
 code += "        \"@typescript-eslint\"\n";
 code += "    ],\n";
-code += `    rules: Object.assign(\n`;
+code += "    rules: Object.assign(\n";
 code += `        ${rules.join(",\n        ")}\n`;
-code += `    )\n`;
+code += "    )\n";
 code += "};\n";
 
 writeFileSync("./src/index.ts", code);
@@ -36,4 +37,6 @@ build({
     outfile: pkg.main,
     logLevel: "info",
     minify: true
+}).catch(e => {
+    console.log(e);
 });
