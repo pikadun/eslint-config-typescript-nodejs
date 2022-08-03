@@ -12,17 +12,9 @@ Add a `.eslintrc` file in the project root directory
 
 ```json
 {
-  "extends": "eslint-config-typescript-nodejs"
+  "extends": "eslint-config-typescript-nodejs",
+  "parserOptions": {
+    "project": "tsconfig.json"
+  }
 }
 ```
-
-## Contribute
-
-### About config files
-
-Each filename has a prefix string:
-| Prefix | Description |
-|-----|-----|
-| t- | typescript-eslint supported rules |
-| e- | eslint only rules |
-| ext- | extension rules |
