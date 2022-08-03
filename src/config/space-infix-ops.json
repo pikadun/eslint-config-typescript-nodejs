@@ -1,4 +1,0 @@
-{
-    "space-infix-ops": "off",
-    "@typescript-eslint/space-infix-ops": "error"
-}

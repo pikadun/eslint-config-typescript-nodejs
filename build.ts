@@ -6,7 +6,7 @@ import pkg from "./package.json";
 let code = "";
 const rules: string[] = [];
 const configurationFiles = readdirSync(resolve(__dirname, "./src/config"));
-configurationFiles.forEach((filename, index) => {
+configurationFiles.forEach((filename) => {
     filename = basename(filename, extname(filename));
     const ruleName = filename.replace(/-/g, "");
     code += `import ${ruleName} from "./config/${filename}.json";\n`;
@@ -14,11 +14,17 @@ configurationFiles.forEach((filename, index) => {
 });
 code += "\n";
 code += "export = {\n";
+code += "    extends: [\n";
+code += "        \"eslint:recommended\",\n";
+code += "        \"plugin:@typescript-eslint/recommended\"\n";
+code += "    ],\n";
 code += "    parser: \"@typescript-eslint/parser\",\n";
 code += "    plugins: [\n";
 code += "        \"@typescript-eslint\"\n";
 code += "    ],\n";
-code += `    rules: Object.assign(${rules.join(",\n        ")})\n`;
+code += `    rules: Object.assign(\n`;
+code += `        ${rules.join(",\n        ")}\n`;
+code += `    )\n`;
 code += "};\n";
 
 writeFileSync("./src/index.ts", code);

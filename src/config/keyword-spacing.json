@@ -1,4 +1,0 @@
-{
-    "keyword-spacing": "off",
-    "@typescript-eslint/keyword-spacing": "error"
-}

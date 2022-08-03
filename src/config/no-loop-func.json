@@ -1,4 +1,0 @@
-{
-    "no-loop-func": "off",
-    "@typescript-eslint/no-loop-func": "error"
-}

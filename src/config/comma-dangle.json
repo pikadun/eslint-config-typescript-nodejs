@@ -1,4 +1,0 @@
-{
-    "comma-dangle": "off",
-    "@typescript-eslint/comma-dangle": "error"
-}
