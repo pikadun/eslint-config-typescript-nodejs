@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-typescript-nodejs",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Typescript rules for nodejs",
   "keywords": [
     "eslint",
