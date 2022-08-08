@@ -1,0 +1,4 @@
+{
+    "space-before-blocks": "off",
+    "@typescript-eslint/space-before-blocks": "error"
+}
