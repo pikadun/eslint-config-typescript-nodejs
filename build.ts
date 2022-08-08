@@ -25,7 +25,7 @@ code += "        \"@typescript-eslint\"\n";
 code += "    ],\n";
 code += "    rules: Object.assign(\n";
 code += `        ${rules.join(",\n        ")}\n`;
-code += "    )\n";
+code += "    ) as unknown\n";
 code += "};\n";
 
 writeFileSync("./src/index.ts", code);

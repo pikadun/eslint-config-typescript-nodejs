@@ -18,5 +18,5 @@ export = {
         indent,
         quotes,
         semi
-    )
+    ) as unknown
 };

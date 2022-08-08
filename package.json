@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-typescript-nodejs",
   "version": "3.0.1",
-  "description": "Typescript rules for nodejs",
+  "description": "Eslint rules for Typescript.",
   "keywords": [
     "eslint",
     "typescript",
@@ -12,7 +12,8 @@
     "index.js"
   ],
   "scripts": {
-    "prepublishOnly": "ts-node ./build.ts",
+    "build": "ts-node ./build.ts",
+    "prepublishOnly": "npm run build",
     "lint": "eslint '**/*.ts'"
   },
   "repository": {
@@ -26,7 +27,7 @@
   },
   "homepage": "https://github.com/pikadun/eslint-config-typescript-nodejs#readme",
   "engines": {
-    "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
+    "node": "^14.17.0 || >=16.0.0"
   },
   "devDependencies": {
     "@types/eslint": "^8.4.5",
