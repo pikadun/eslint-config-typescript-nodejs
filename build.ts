@@ -5,13 +5,24 @@ import pkg from "./package.json";
 
 let code = "";
 const rules: string[] = [];
-const configurationFiles = readdirSync(resolve(__dirname, "./src/config"));
-configurationFiles.forEach((filename) => {
-    filename = basename(filename, extname(filename));
-    const ruleName = filename.replace(/-/g, "");
-    code += `import ${ruleName} from "./config/${filename}.json";\n`;
-    rules.push(ruleName);
-});
+const rootdir = resolve(__dirname, "src");
+
+const generateor = (dir: string) => {
+    const contents = readdirSync(dir, { withFileTypes: true });
+    contents.forEach(content => {
+        if (content.isDirectory()) {
+            return generateor(resolve(dir, content.name));
+        }
+        const filename = basename(content.name, extname(content.name));
+        const ruleName = filename.replace(/-/g, "");
+        const importPath = `.${resolve(dir, content.name).replace(rootdir, "")}`;
+        code += `import ${ruleName} from "${importPath}";\n`;
+        rules.push(ruleName);
+    });
+};
+
+generateor(resolve(rootdir, "config"));
+
 code += "\n";
 code += "export = {\n";
 code += "    extends: [\n";
